@@ -1,0 +1,18 @@
+{
+  "name": "PayPay",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/backend",
+      "packages/frontend"
+    ]
+  },
+  "scripts": {
+    "be:start": "yarn workspace backend start",
+    "fe:start": "yarn workspace frontend start"
+  },
+  "version": "1.0.0",
+  "repository": "https://github.com/wynnej1983/PayPay",
+  "author": "Jonathan Wynne <wynnej1983@gmail.com>",
+  "license": "MIT"
+}

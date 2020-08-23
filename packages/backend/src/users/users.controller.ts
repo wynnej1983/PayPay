@@ -4,6 +4,7 @@ import {
   Post,
   Delete,
   Param,
+  Body,
   UseGuards,
   ClassSerializerInterceptor,
   UseInterceptors,
@@ -26,7 +27,7 @@ export class UsersController {
 
   @Post()
   @Roles(RolesData.Admin)
-  create(createUserDto: CreateUserDto): Promise<User> {
+  create(@Body() createUserDto: CreateUserDto): Promise<User> {
     return this.usersService.create(createUserDto);
   }
 

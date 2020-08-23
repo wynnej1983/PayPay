@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+  height: 100vh;
+}
+
+.App__UserName {
+  font-weight: bold;
+  color: white;
+  padding: .5rem 1rem;
+}
+
+.MuiListItemAvatar-root {
+  align-self: flex-start;
+}
+
+.MuiListItemSecondaryAction-root {
+  top: 0% !important;
+  margin-top: 20px;
+}

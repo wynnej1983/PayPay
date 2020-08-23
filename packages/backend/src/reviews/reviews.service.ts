@@ -71,6 +71,7 @@ export class ReviewsService {
     }
 
     if (review.reviewers.some((r) => r.id === reviewerId)) {
+      console.log(review);
       throw new HttpException(
         'Cannot assign the same reviewer more than once',
         HttpStatus.BAD_REQUEST,

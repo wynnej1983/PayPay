@@ -28,10 +28,12 @@ export class User {
   @ManyToOne(() => Role, { eager: true })
   role: Role;
 
-  @OneToMany(() => Review, (review) => review.reviewee)
+  @OneToMany(() => Review, (review) => review.reviewee, { onDelete: 'CASCADE' })
   reviews: Review[];
 
-  @ManyToOne(() => Review, (review) => review.reviewers)
+  @ManyToOne(() => Review, (review) => review.reviewers, {
+    onDelete: 'CASCADE',
+  })
   review: Review;
 
   @Exclude({ toPlainOnly: true })

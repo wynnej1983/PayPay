@@ -27,18 +27,12 @@ export class AuthController {
   @Post('login')
   async logIn(@Req() request: RequestWithUser) {
     const { user } = request;
-    const accessToken = this.authService.getAuthToken(user.id);
+    const token = this.authService.getAuthToken(user.id);
     user.password = undefined;
     return {
       ...user,
-      accessToken,
+      token,
     };
-  }
-
-  @UseGuards(JwtAuthGuard)
-  @Post('logout')
-  async logOut(@Req() request: RequestWithUser) {
-    request.res.setHeader('Set-Cookie', this.authService.getCookieForLogOut());
   }
 
   @UseGuards(JwtAuthGuard)
